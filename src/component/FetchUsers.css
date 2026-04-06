@@ -1,0 +1,147 @@
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+}
+
+/* 🔥 FULL PAGE CENTER */
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LOADING (CENTER FULL SCREEN) */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SPINNER */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #eee;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ERROR */
+.error-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
+
+/* MAIN CONTAINER */
+.users-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 NEW WRAPPER (IMPORTANT) */
+.grid-wrapper {
+  display: flex;
+  justify-content: center; /* FORCE CENTER */
+  width: 100%;
+}
+
+/* HEADING */
+.users-container h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 🔥 PERFECT CENTER GRID */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 240px);
+  gap: 25px;
+}
+
+/* CARD */
+.user-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.user-card:hover {
+  transform: translateY(-6px);
+}
+
+.user-card h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.user-card p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.user-card a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.user-card a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1300px) {
+  .users-grid {
+    grid-template-columns: repeat(4, 240px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .users-grid {
+    grid-template-columns: repeat(3, 240px);
+  }
+}
+
+@media (max-width: 800px) {
+  .users-grid {
+    grid-template-columns: repeat(2, 240px);
+  }
+}
+
+@media (max-width: 500px) {
+  .users-grid {
+    grid-template-columns: 1fr;
+  }
+}
